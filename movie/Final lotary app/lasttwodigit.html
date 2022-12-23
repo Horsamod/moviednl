@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Prize Last 2 Digit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="digit2-data.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="row center">
+        <div class="col-12 col-s-12 ">
+            <h2 class="center title">First Prize Last 2 Digit</h2><br />
+            <form class="form-inline">
+                <input id="numsearch" type="text" name="numonly" maxlength="2" placeholder="Search your Number" />
+            </form>
+            <br />
+
+
+
+            <table id="numberHeader">
+                <tr>
+                    <th class="dateth">DATE</th>
+                    <th>MOR</th>
+                    <th>DAY</th>
+                    <th>EVN</th>
+                </tr>
+            </table>
+
+            <!-- TWO DIGIT -->
+            <table id="numbertable">
+                <tr>
+                    <th>14-12-22</th>
+                    <td>45</td>
+                    <td>75</td>
+                    <td>96</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Script DON'T  EDIT-->
+    <!-- Script DON'T  EDIT-->
+    <script>
+        function lastTwoDigitData(twoDigit) {
+            return `<tr>
+                    <th>
+                        ${twoDigit.date}
+                        </th>
+                        <td>
+                        ${twoDigit.mor}
+                        </td>
+                        <td>
+                        ${twoDigit.day}
+                        </td>
+                        <td>
+                        ${twoDigit.eve}
+                        </td>
+                    </tr>
+                    `;
+        }
+        document.getElementById("numbertable").innerHTML = `${lastTwoDigit.map(lastTwoDigitData).join("")}`;
+    </script>
+    <script>
+        $(function () {
+            $("input[name='numonly']").on('input', function (e) {
+                $(this).val($(this).val().replace(/[^0-9]/g, ''));
+            });
+        });
+        // FOR HIGHLIGHT ***************************
+        $(function () {
+            // console.log('');
+            $('#numsearch').on('input', function () {
+                var textboxValue = $('#numsearch').val();
+                if (textboxValue.length > 1) {
+                    $('#numbertable td').each(function () {
+                        var filter = textboxValue.toString().toUpperCase();
+                        if ($(this).html().toString().toUpperCase().indexOf(filter) > -1) {
+                            $(this).addClass('highlight');
+                            $(this).addClass('bg');
+                        } else {
+                            $(this).removeClass('highlight');
+                            $(this).removeClass('bg');
+                        }
+                    });
+                }
+                else {
+                    $('#numbertable td').removeClass('highlight');
+                    $('#numbertable td').removeClass('bg');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

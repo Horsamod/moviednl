@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Number</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lucky-data.js"></script>
+
+
+</head>
+
+<body>
+    <h2 class="center title">Try your Luck with our guess</h2>
+    <p class="gues"><span class="note">ⓘNote:-</span>This is our guessing number</p>
+    <!-- START -->
+    <table id="numberHeader">
+        <tr>
+            <th>DATE</th>
+            <th>MOR</th>
+            <th>DAY</th>
+            <th>EVN</th>
+            <th></th>
+        </tr>
+    </table>
+    <table id="numbertable"></table>
+    <!-- END -->
+    <h3 class="center title" style="margin-top: 10px;">Best Of Luck</h3>
+
+
+    <script>
+        function quotTemplate(quote) {
+            return `<tr>
+                <th>
+                    ${quote.date}
+                    </th>
+                    <td>
+                    ${quote.mor}
+                    </td>
+                    <td>
+                    ${quote.day}
+                    </td>
+                    <td>
+                    ${quote.eve}
+                    </td>
+                    <td>
+                    ${quote.ext}
+                    </td>
+                </tr>
+                `;
+        }
+        document.getElementById("numbertable").innerHTML = `${targetNumber.map(quotTemplate).join("")}`;
+    </script>
+</body>
+
+</html>

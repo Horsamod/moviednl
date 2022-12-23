@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Dear Lottery</title>
+    <script src="w3.js"></script>
+    <script src="result-list.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="btn-box">
+        <button class="btnr next" onclick="myShow.previous()">Previous</button>
+        <button class="btnr prev" onclick="myShow.next()">Next</button>
+    </div>
+    <div id="resultImage">
+    </div>
+
+
+        <!-- Script DON'T  EDIT-->
+        <script>
+            function imageResultData(imgSrc) {
+                return `
+                        <img id="" class="result" src="${imgSrc.result}">
+                    `;
+            }
+            document.getElementById("resultImage").innerHTML = `${resultList.map(imageResultData).join("")}`;
+        </script>
+    <script>
+        var myShow = w3.slideshow(".result", 0);
+    </script>
+</body>
+
+</html>
