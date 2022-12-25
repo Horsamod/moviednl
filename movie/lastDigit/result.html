@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script src="w3.min.js"></script>
     <script src="result-list.js"></script>
-    <script src="https://www.cssscript.com/demo/image-zoomer-moible-pinchzoom/pinch-zoom.umd.js"></script>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
     <link rel="stylesheet" href="style.min.css">
 </head>
 
@@ -22,7 +22,18 @@
 
 
     <script>
-        new window.PinchZoom.default(document.querySelector('#resultImage .result'), {});
+        const elem = document.getElementById('resultImage')
+const panzoom = Panzoom(elem, {
+  maxScale: 5
+})
+panzoom.pan(10, 10)
+panzoom.zoom(2, { animate: true })
+
+// Panning and pinch zooming are bound automatically (unless disablePan is true).
+// There are several available methods for zooming
+// that can be bound on button clicks or mousewheel.
+button.addEventListener('click', panzoom.zoomIn)
+elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
     </script>
     <!-- Script DON'T  EDIT-->
     <script>
