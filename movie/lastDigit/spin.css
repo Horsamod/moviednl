@@ -19,7 +19,7 @@ body {
 	color:#293444;
 	background:#ffffff;
 	font-weight:400;
-	min-width:1200px;
+	width: 100%;
 }
 
 sup {
