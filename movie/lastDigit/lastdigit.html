@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Prize Last Digit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    <title>First Prize Last Digit</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="digit1-data.js"></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
     <div class="row">
         <div class="col-12 col-s-12 ">
@@ -21,9 +17,6 @@
                 <input id="numsearch" type="text" name="numonly" maxlength="1" placeholder="Search your Number" />
             </form>
             <br />
-
-
-
             <table id="numberHeader">
                 <tr>
                     <th>DATE</th>
@@ -32,7 +25,6 @@
                     <th>EVN</th>
                 </tr>
             </table>
-
             <table id="numbertable">
                 <tr>
                     <th>**-**-**</th>
@@ -43,12 +35,6 @@
             </table>
         </div>
     </div>
-
-
-
-
-
-    <!-- Script DON'T  EDIT-->
     <script>
         function lastDigitData(oneDigit) {
             return `<tr>
