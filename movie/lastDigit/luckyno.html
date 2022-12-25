@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    <title>Lucky Number</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
     <script src="lucky-data.js"></script>
-
-
 </head>
-
 <body>
     <h2 class="center title">Try your Luck with our guess</h2>
     <p class="gues"><span class="note">ⓘNote:-</span>This is our guessing number</p>
     <!-- START -->
+    <div id="dateTimeBox">
+    </div>
     <table id="numberHeader">
         <tr>
-            <th>DATE</th>
             <th>MOR</th>
             <th>DAY</th>
             <th>EVN</th>
@@ -27,14 +24,19 @@
     <table id="numbertable"></table>
     <!-- END -->
     <h3 class="center title" style="margin-top: 10px;">Best Of Luck</h3>
-
-
     <script>
+        function dateTimer(dateTime) {
+            return `
+                <div class="dateL">
+                ${dateTime.date}
+                </div>
+                <div class="dateT">
+                ${dateTime.time}
+                </div>
+                `;
+        }
         function quotTemplate(quote) {
             return `<tr>
-                <th>
-                    ${quote.date}
-                    </th>
                     <td>
                     ${quote.mor}
                     </td>
@@ -50,6 +52,7 @@
                 </tr>
                 `;
         }
+        document.getElementById("dateTimeBox").innerHTML = `${dateTime.map(dateTimer).join("")}`;
         document.getElementById("numbertable").innerHTML = `${targetNumber.map(quotTemplate).join("")}`;
     </script>
 </body>

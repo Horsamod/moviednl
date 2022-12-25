@@ -246,3 +246,10 @@ button {
     width: 100%;
     margin: 15px auto;
 }
+#dateTimeBox{
+    width: 90%;
+    text-align: center;
+}
+.dateL{
+    margin-top: 20px;
+}
