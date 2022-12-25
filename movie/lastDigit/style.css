@@ -249,7 +249,18 @@ button {
 #dateTimeBox{
     width: 90%;
     text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 .dateL{
-    margin-top: 20px;
+    color: #ff5999;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}.dateT{
+    color: #3391fd;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
 }
