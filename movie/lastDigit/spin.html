@@ -148,37 +148,11 @@ function enable() {
 }
 
 function refresh() {
-	newButton.setAttribute("disabled", "");
+	// newButton.setAttribute("disabled", "");
     // Sets `disableRefresh` to a truthy value, and refreshes the page
     localStorage.setItem("disableRefresh", "yes");
     
 };
-
-
-// // const refreshBtn = document.getElementById("disableBtn");
-// newButton.addEventListener("click", refresh);
-// disable();
-
-// function disable() {
-//     // If `disableRefresh` is truthy...
-//     if (localStorage.getItem("disableRefresh")) {
-//       // ...Disables the button and re-enables it after 2 seconds
-//       newButton.setAttribute("disabled", ""); // Any value makes it true
-//       setTimeout(enable, 200000); // JavaScript measures times in milliseconds
-//     }
-// }
-
-// function enable() {
-//     // Removes (boolean) `disabled` attribute and (string) `disableRefresh` item
-//     newButton.removeAttribute("disabled");
-//     localStorage.removeItem("disableRefresh")
-// }
-
-// // function refresh() {
-// //     // Sets `disableRefresh` to a truthy value, and refreshes the page
-// //     localStorage.setItem("disableRefresh", "yep");
-// //     location = location;
-// // };
 
 	</script>
 </body>
