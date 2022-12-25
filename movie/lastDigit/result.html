@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="w3.min.js"></script>
     <script src="result-list.js"></script>
+    <script src="https://unpkg.com/pinch-zoom-js"></script>
     <link rel="stylesheet" href="style.min.css">
 </head>
 
@@ -17,6 +18,12 @@
     </div>
     <div id="resultImage">
     </div>
+
+
+    <script>
+        let el = document.querySelector('#resultImage');
+        let instance = new PinchZoom(el, options);
+    </script>
     <!-- Script DON'T  EDIT-->
     <script>
         function imageResultData(imgSrc) {
