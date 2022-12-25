@@ -6,13 +6,11 @@
 	box-sizing:border-box;
 }
 
-
 html {
 	background:#ffffff;
 }
 
 body {
-	position:relative;
 	font-size:1em;
 	font-family:"Open Sans", sans-serif;
 	-webkit-text-size-adjust:none;
@@ -28,10 +26,7 @@ sup {
 	font-size:90%;
 	line-height:normal;
 }
-input,
-textarea,
-select,
-button,
+
 a {
 	text-decoration:none;
 	color:#cd6a01;
@@ -40,21 +35,6 @@ a {
 	-ms-transition:all 0.2s ease-in-out;
 	-o-transition:all 0.2s ease-in-out;
 	transition:all 0.2s ease-in-out;
-	-webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-	background-color: transparent;
-}
-input:focus,
-textarea:focus,
-select:focus,
-button:focus,
-a:focus{
-	outline: none !important;
 }
 
 a:hover {
@@ -108,10 +88,10 @@ li {
 }
 
 .btn {
-	background:#ffea00;
-	background:-moz-linear-gradient(top, #ff5eb1 0%, #ff5eb1 100%);
-	background:-webkit-linear-gradient(top, #ff5eb1 0%, #ff5eb1 100%);
-	background:linear-gradient(to bottom, #ff5eb1 0%, #ff5eb1 100%);
+	background:#ff9bd5;
+	background:-moz-linear-gradient(top, #ff9bd5 0%, #ff9bd5 100%);
+	background:-webkit-linear-gradient(top, #ff9bd5 0%, #ff9bd5 100%);
+	background:linear-gradient(to bottom, #ff9bd5 0%, #ff9bd5 100%);
 }
 
 
@@ -203,8 +183,8 @@ p {
 /* BUTTONS & LINKS */
 .btn {
 	position:relative;
-	width: 60px;
-	height: 60px;
+	width: 70px;
+	height: 70px;
 	font:1.3em/24px Oswald, sans-serif;
 	text-transform:uppercase;
 	text-align:center;
@@ -219,7 +199,7 @@ p {
 	cursor:pointer;
 	border:2px solid #00aeff;
 	-webkit-box-shadow:0 2px 3px 0 rgba(0, 0, 0, 0.5);
-	box-shadow:0 2px 3px 0 rgba(0, 0, 0, 0.5),  inset 0 0px 5px 2px rgba(0, 0, 0, 0.4);
+	box-shadow:0 0px 5px 0 rgba(0, 0, 0, 0.5),  inset 0 0px 5px 2px rgba(0, 0, 0, 0.4);
 	letter-spacing:1px;
 	color:#000;
 	font-weight:700;
@@ -399,7 +379,7 @@ p {
 }
 
 .numbers-generator .balls .bonus.extra:before {
-	content:"Last Digit";
+	content:"";
 }
 
 /* GENERATOR */
@@ -463,8 +443,8 @@ input{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+  }
 
-.generator .balls {
+  .generator .balls {
 	margin-left: -30px;
-}
+  }
