@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="spin.css">
+	<style>
+		.EBlur{
+			animation: MotionBlur  7700ms;
+			animation-delay: 00;
+			font-size: 35px;
+		}
+		@keyframes MotionBlur {
+			0%{
+				/* filter: blur(4px); */
+				font: 900;
+				font-size: 35px;
+				color: #000000;
+			}90%{
+				filter: blur(2px);
+				font: inherit;
+				font-size: inherit;
+				color: #ffffff;
+			}100%{
+				filter: blur(0px);
+				font: inherit;
+				font-size: inherit;
+			}
+		}
+	</style>
+</head>
+
+<body>
+    <!-- LOTTERY RESULT -->
+	<!-- saddamhosainpathan7478@gmail.com -->
+	<!-- Abdul@8944 -->
+
+	<div class="container py-5" style="margin:100px auto">
+
+		<div class="row">
+			<div class="generic-box generator numbers-generator">
+				<div id="generatorResults" class="col-md-8 offset-md-2"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form id="startNumbersGeneratorForm">
+					<div class="row" style="display:none">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="from_balls"></label>
+								<input type="number" name="from_balls" class="form-control" value="3"
+									aria-describedby="fromBallsHelp" min="0">
+								<small id="fromBallsHelp" class="form-text text-muted"></small>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="range_numbers"></label>
+								<input type="number" name="range_numbers" class="form-control" value="9"
+									aria-describedby="rangeNumbersHelp" min="0">
+								<small id="rangeNumbersHelp" class="form-text text-muted"></small>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="extra_balls"></label>
+								<input type="number" name="extra_balls" class="form-control" value="1"
+									aria-describedby="extraBallsHelp" min="0">
+								<small id="extraBallsHelp" class="form-text text-muted"></small>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="range_extra_numbers"></label>
+								<input type="number" name="range_extra_numbers" class="form-control" value="9"
+									aria-describedby="rangeExtraNumbersHelp" min="0">
+								<small id="rangeExtraNumbersHelp" class="form-text text-muted"></small>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<input id="disableBtn" type="submit" value="SPIN" name="generate_numbers" class="btn btn-block EffectC">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+    
+
+
+    <script src="spin.js"></script>
+	<script>
+		$(".EffectC").click(function () {
+			$(".number").addClass("EBlur");
+		});
+
+
+window.addEventListener("load", function() {
+  // Check time and update the button's state every second.
+	setInterval(updateSubmitButtonState, 1000);
+}, false);
+
+var newButton = document.getElementById("disableBtn");
+var today2 = new Date().getHours()  + ':' + new Date().getMinutes();
+if (today2 >= 06 + ':' + 00 && today2 <= 08 + ':' + 00) {
+    newButton.style.display = "block";
+} else {
+    newButton.style.display = "none";
+}
+if (today2 >= 11 + ':' + 00 && today2 <= 13 + ':' + 00) {
+    newButton.style.display = "block";
+} else {
+	newButton.style.display = "none";
+}
+if (today2 >= 15 + ':' + 00 && today2 <= 17 + ':' + 00) {
+    newButton.style.display = "block";
+} else {
+	newButton.style.display = "block";
+}
+
+
+newButton.addEventListener("click", refresh);
+disable();
+
+function disable() {
+    // If `disableRefresh` is truthy...
+    if (localStorage.getItem("disableRefresh")) {
+      // ...Disables the button and re-enables it after 2 seconds
+      newButton.setAttribute("disabled", ""); // Any value makes it true
+      setTimeout(enable, 5000); // JavaScript measures times in milliseconds
+    }
+}
+
+function enable() {
+    // Removes (boolean) `disabled` attribute and (string) `disableRefresh` item
+    newButton.removeAttribute("disabled");
+    localStorage.removeItem("disableRefresh")
+}
+
+function refresh() {
+	// newButton.setAttribute("disabled", "");
+    // Sets `disableRefresh` to a truthy value, and refreshes the page
+    localStorage.setItem("disableRefresh", "yes");
+    
+};
+
+
+// // const refreshBtn = document.getElementById("disableBtn");
+// newButton.addEventListener("click", refresh);
+// disable();
+
+// function disable() {
+//     // If `disableRefresh` is truthy...
+//     if (localStorage.getItem("disableRefresh")) {
+//       // ...Disables the button and re-enables it after 2 seconds
+//       newButton.setAttribute("disabled", ""); // Any value makes it true
+//       setTimeout(enable, 200000); // JavaScript measures times in milliseconds
+//     }
+// }
+
+// function enable() {
+//     // Removes (boolean) `disabled` attribute and (string) `disableRefresh` item
+//     newButton.removeAttribute("disabled");
+//     localStorage.removeItem("disableRefresh")
+// }
+
+// // function refresh() {
+// //     // Sets `disableRefresh` to a truthy value, and refreshes the page
+// //     localStorage.setItem("disableRefresh", "yep");
+// //     location = location;
+// // };
+
+	</script>
+</body>
+
+</html>
