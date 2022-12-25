@@ -107,7 +107,7 @@
 
 window.addEventListener("load", function() {
   // Check time and update the button's state every second.
-	setInterval(updateSubmitButtonState, 1000);
+	setInterval(1000);
 }, false);
 
 var newButton = document.getElementById("disableBtn");
@@ -137,7 +137,7 @@ function disable() {
     if (localStorage.getItem("disableRefresh")) {
       // ...Disables the button and re-enables it after 2 seconds
       newButton.setAttribute("disabled", ""); // Any value makes it true
-      setTimeout(enable, 5000); // JavaScript measures times in milliseconds
+      setTimeout(enable, 15000); // JavaScript measures times in milliseconds
     }
 }
 
