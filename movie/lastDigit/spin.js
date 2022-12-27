@@ -75,13 +75,13 @@ function generate(balls, numbers, balls2=0, extra_numbers=0) {
 
 function createNums(obj, idNum, balls, numbers, balls2, extra_numbers) {
 	if (idNum <= balls) { 
-		for (var i = 0; i < numbers.length * 11; i++){
+		for (var i = 0; i < numbers.length * 7; i++){
 			var chosen = Math.floor(Math.random() * numbers.length); 
 			obj.append('<div class="number EBlur" id="ID_' + idNum + '-' + i + '">' + numbers[chosen] + '</div>'); 
 		} 
 	} else {
 		if(extra_numbers.length > 0) {
-			for (var j = 0; j < extra_numbers.length * 11; j++){
+			for (var j = 0; j < extra_numbers.length * 7; j++){
 				var chosen = Math.floor(Math.random() * extra_numbers.length); 
 				obj.append('<div class="number EBlur" id="ID_' + idNum + '-' + j + '">' + extra_numbers[chosen] + '</div>');
 			} 
@@ -90,10 +90,10 @@ function createNums(obj, idNum, balls, numbers, balls2, extra_numbers) {
 }; 
 
 function moveNums(obj, idNum, balls, numbers, balls2, extra_numbers) { 
-	var time = 6000;
+	var time = 4000;
 	time += Math.round(Math.random() * 200); 
 	obj.stop(true, true); 
-	obj.css('margin-top', '-5100px');
+	obj.css('margin-top', '-2400px');
 	var Duplicates = checkDuplicates(idNum, balls, numbers, balls2, extra_numbers); 
 	while (Duplicates) {
 		Duplicates = checkDuplicates(idNum, balls, numbers, balls2, extra_numbers)

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="spin.css">
 	<style>
 		.EBlur{
-			animation: MotionBlur  5700ms;
+			animation: MotionBlur  3800ms;
 			animation-delay: 00;
 			font-size: 35px;
 		}
@@ -137,7 +137,7 @@ function disable() {
     if (localStorage.getItem("disableRefresh")) {
       // ...Disables the button and re-enables it after 2 seconds
       newButton.setAttribute("disabled", ""); // Any value makes it true
-      setTimeout(enable, 15000); // JavaScript measures times in milliseconds
+      setTimeout(enable, 1000); // JavaScript measures times in milliseconds
     }
 }
 
